@@ -1,0 +1,16 @@
+---
+---
+
+/* akasralikar.github.io */
+
+Developer:    Anirudha Kasralikar
+Twitter:      @akasralikar
+Location:     Pune, MH INDIA
+
+Last updated: {{ site.time }}
+Language:     English
+Built with:   Jekyll {{ jekyll.version }} <http://jekyllrb.com>
+              Sublime Text 3 <http://www.sublimetext.com>
+              Grunt <http://gruntjs.com>
+              SimpleIcon <http://www.flaticon.com>
+              Twitter Emoji <https://github.com/twitter/twemoji>
