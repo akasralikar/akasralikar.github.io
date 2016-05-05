@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title: "Blog about computers"
+title: "Anirudha Kasralikar"
 description: "Personal website of developer slash illustrator Anirudha Kasralikar."
 logo: site-logo.png
 teaser: default-teaser.png
@@ -8,6 +8,7 @@ locale: en_US
 words_per_minute: 200
 title_separator: "×"
 url: http://akasralikar.github.io
+hostname: akasralikar.github.io
 
 # Site owner
 

@@ -1,11 +1,5 @@
 # Site wide configuration
-
 url: http://localhost:4000
-
-
-# Site owner
-url: http://localhost:4000
-disqus-shortname: akasralikar-dev
 
 owner:
   google:
@@ -19,7 +13,7 @@ owner:
     verify: ""
   yandex:
     verify: ""
-disqus-shortname: mmistakes-dev
+disqus-shortname: akasralikar-dev
 
 
 # Plugin: jekyll-assets
