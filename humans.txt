@@ -1,0 +1,13 @@
+/* TEAM */
+
+        Developer:    Anirudha Kasralikar
+        Contact:      akasralikar [at] outlook.come
+        Twitter:      @akasralikar
+        Location:     Pune, Maharashtra, India
+
+/* SITE */
+
+        Last updated: 2016-05-05 22:30:26 +0530
+        Language:     English
+        IDE:          Sublime Text, Notepad++, FileZilla, Photoshop
+        Built with:   Jekyll 3.1.3 <http://jekyllrb.com>
