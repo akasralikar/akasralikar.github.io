@@ -6,7 +6,7 @@
   <generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator>
   <link href="http://akasralikar.github.io/articles-feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://akasralikar.github.io/" rel="alternate" type="text/html" />
-  <updated>2016-05-05T22:55:03+05:30</updated>
+  <updated>2016-05-09T00:30:50+05:30</updated>
   <id>http://akasralikar.github.io/</id>
 
   <title>Articles - Anirudha Kasralikar</title>
@@ -33,12 +33,274 @@
 
   
     <entry>
-  <title>Dont Repeat Yourself - Dynamic Programming</title>
-  <link href="http://akasralikar.github.io/articles/dont-repeat-yourself-dynamic-programming/" rel="alternate" type="text/html" title="Dont Repeat Yourself - Dynamic Programming" />
-  <published>2016-05-05T00:00:00+05:30</published>
+  <title>Modified Hungarian Notation</title>
+  <link href="http://akasralikar.github.io/articles/modified-modified-hungarian-notation/" rel="alternate" type="text/html" title="Modified Hungarian Notation" />
+  <published>2016-05-08T16:57:43+05:30</published>
 
   
-    <updated>2016-05-05T00:00:00+05:30</updated>
+    <updated>2016-05-08T16:57:43+05:30</updated>
+  
+
+  <id>http://akasralikar.github.io/articles/modified-modified-hungarian-notation</id>
+  <content type="html" xml:base="http://akasralikar.github.io/articles/modified-modified-hungarian-notation/">
+    
+
+&lt;p&gt;&lt;img src=&quot;http://akasralikar.github.io/images/het-belang-van-coding-standards.jpg&quot; alt=&quot;Modified Hungarian Notation&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Coding standards define a programming style. Over the period of time its proven that following a particular standard is useful for code maintainability. In this article I am presenting introduction to modified Hungarian notation.&lt;/p&gt;
+
+&lt;nav class=&quot;js-toc toc&quot;&gt;
+  &lt;h4 class=&quot;toc__title&quot;&gt;Contents&lt;/h4&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#background&quot; id=&quot;markdown-toc-background&quot;&gt;Background&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#apps-hungarian&quot; id=&quot;markdown-toc-apps-hungarian&quot;&gt;Apps Hungarian&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#systems-hungarian&quot; id=&quot;markdown-toc-systems-hungarian&quot;&gt;Systems Hungarian&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#modified-hungarian-notations&quot; id=&quot;markdown-toc-modified-hungarian-notations&quot;&gt;Modified Hungarian Notations&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#local-variables&quot; id=&quot;markdown-toc-local-variables&quot;&gt;Local Variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#class-variables&quot; id=&quot;markdown-toc-class-variables&quot;&gt;Class Variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#conventions-for-naming-file&quot; id=&quot;markdown-toc-conventions-for-naming-file&quot;&gt;Conventions for naming file&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot; id=&quot;markdown-toc-conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/nav&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;I presume that you have basic hands-on with &lt;a href=&quot;http://php.net/&quot; title=&quot;PHP&quot;&gt;PHP&lt;/a&gt; programming. Also you understood how community based standard recommendation for any programming language prosper.
+You can go through &lt;a href=&quot;http://wwference.w.php-fig.org/psr/&quot; title=&quot;PHP Standard Recommendation&quot;&gt;PHP Standard Recommendation&lt;/a&gt; as reference.&lt;/p&gt;
+
+&lt;p&gt;As per Wikipedia, definition of Hungarian notation is as below.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hungarian notation is an identifier naming convention in computer programming, 
+in which the name of a variable or function indicates its type or intended use.   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This notation was originally invented by Charles Simonyi from Microsoft, who happens to belong to country Hungary. There are broadly 2 types of this notation.&lt;/p&gt;
+
+&lt;h3 id=&quot;apps-hungarian&quot;&gt;Apps Hungarian&lt;/h3&gt;
+
+&lt;p&gt;Original notation was historically called as Apps Hungarian, because this was used in Microsoft applications like Word and Excel. Developer was free to choose which prefix to use, like “rw” was used to refer to rows and “col” for columns, “ix” to mean index of an array, etc. Apps Hungarian was very useful, especially with C programming where the compiler did not provide a very useful type system.&lt;/p&gt;
+
+&lt;h3 id=&quot;systems-hungarian&quot;&gt;Systems Hungarian&lt;/h3&gt;
+
+&lt;p&gt;Over the period of time there was another variant got created named Systems Hungarian, which restricts variable prefixes to limit to its actual data type, like “l” for long integer, “ul” for unsigned long, “d” for double, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;modified-hungarian-notations&quot;&gt;Modified Hungarian Notations&lt;/h2&gt;
+
+&lt;p&gt;Having coding standards have lot of advantages. The source code will be more comprehensive and will become easy-to-maintain.  Your code becomes your documentation.
+On top of coding standards if you follow uniform variable naming standards it really adds cherry on the cake. Taking the systems hungarian notations as base, I can propose some of naming conventions as below. Add prefix to all of your variables with data type it hold. It means code not only does its job good, but is also easy to add to, maintain and debug.
+I’m not proposing these as a standard, merely mentioning the thought process that goes into variable naming. 
+I tried to solve following questions by proposing below convention. See examples as below.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are you easily able to differentiate class level variables with local variables?&lt;/li&gt;
+  &lt;li&gt;Are you able to identify primitive variables with object variables?&lt;/li&gt;
+  &lt;li&gt;Are variable names descriptive, compact and readable?.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;local-variables&quot;&gt;Local Variables&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;// $int for integer
+$intIntegerVariable = 100;
+
+// $flt for float
+$fltFloatVariable = 1.25;
+
+// $dbl for double
+$dblDoubleVariable = 1000000.123456;
+
+// $str for string
+$strStringVariable = &quot;Hello World!&quot;;
+
+// $bool for boolean
+$boolBooleanVariable = true;
+
+// $bool for all types of resources
+$resResourceVariable = fopen( &#39;/home/akasralikar/file.txt&#39;, &#39;r&#39; );
+
+// $obj for objects
+$objObjectVariable = new CClassName();
+
+// $bool for antonymous / lambda functions
+$fnFunctionVariable = function( $name ) {
+	printf( &quot;Hello %s\r\n&quot;, $name );
+};&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;See how function parameter names are defined with data type.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;function doSomething( $strData ) {
+	echo $strData;
+}
+
+function doSomethingElse( $objClass ) {
+	echo $objClass-&amp;gt;doSomething();
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;class-variables&quot;&gt;Class Variables&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Class Name should match with file name.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CClassName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Member Variables.
+&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_intIntegerVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_fltFloatVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_dblDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_strStringVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_boolBooleanVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_resResourceVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_objObjectVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_fnFunctionVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Array Type Member Variables.
+&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrintIntegerVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrfltFloatVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrfltDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrstrStringVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrboolBooleanVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrresResourceVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrmixMixedVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrobjObjectVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$m_arrfnFunctionVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Static Member Variables.
+&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_intIntegerVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_fltFloatVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_fltDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_strStringVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_boolBooleanVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_resResourceVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_objObjectVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_fnFunctionVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Static Array Type Member Variables.
+&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrintIntegerVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrfltFloatVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrfltDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrstrStringVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrboolBooleanVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrresResourceVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrmixMixedVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrobjObjectVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c_arrfnFunctionVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setIntegerVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$intIntegerVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_intIntegerVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$intIntegerVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setFloatVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fltFloatVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_fltFloatVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fltFloatVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$dblDoubleVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_dblDoubleVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$dblDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setStringVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$strStringVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_strStringVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$strStringVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setBooleanVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$boolBooleanVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_dblBooleanVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$boolBooleanVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setResourceVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$resDoubleVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_resResourceVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$resDoubleVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setObjectVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$objObjectVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_objObjectVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$objObjectVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setFunctionVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fnFunctionVariable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;m_fnFunctionVariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fnFunctionVariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Similarly we can have function which accepts array type parameters and which sets array type class variables.
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;conventions-for-naming-file&quot;&gt;Conventions for naming file&lt;/h3&gt;
+
+&lt;p&gt;In all ideal situation, its good practice to have one class ( or one trait or one interface ) per file. I propose following standard.&lt;/p&gt;
+
+&lt;p&gt;Start your class name with “C” and add suffix like “.class.php”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CClassName.class.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Start your trait name with “T” and add suffix like “.trait.php”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TTraitName.trait.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Start your interface name with “I” and add suffix like “.interface.php”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IInterfaceName.interface.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I sincerely thing coding conventions are to ease out development. This does not gurantee that your code will be rock solid. 
+Its upto you to make most sense out of it as you are developer.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;In closing, it is evident that the conventions participated in making 
+the code more correct, easier to write, and easier to read. Naming conventions 
+cannot guarantee good code, however; only the skill of the programmer can. 
+-- Charles Simonyi ( original inventor of Apps Hungarian )  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+    
+
+&lt;p&gt;&lt;a href=&quot;http://akasralikar.github.io/articles/modified-modified-hungarian-notation/&quot; rel=&quot;nofollow&quot;&gt;Modified Hungarian Notation&lt;/a&gt; was originally published by &lt;a href=&quot;http://akasralikar.github.io/about/&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt; on &lt;a href=&quot;http://akasralikar.github.io&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt;&lt;/p&gt;
+
+
+  </content>
+
+  
+  <author>
+    
+      <name>Anirudha Kasralikar</name>
+    
+    
+      <email>akasralikar@outlook.com</email>
+    
+    <uri>http://akasralikar.github.io/</uri>
+  </author>
+
+
+
+  
+    <category term="articles" />
+  
+
+  
+    <category term="coding standards" />
+  
+
+  
+    <summary type="text">My attempt to explain Hungarian notation with a touch of naming convention standard.</summary>
+  
+</entry>
+
+  
+    <entry>
+  <title>Dont Repeat Yourself - Dynamic Programming</title>
+  <link href="http://akasralikar.github.io/articles/dont-repeat-yourself-dynamic-programming/" rel="alternate" type="text/html" title="Dont Repeat Yourself - Dynamic Programming" />
+  <published>2016-05-05T16:57:43+05:30</published>
+
+  
+    <updated>2016-05-05T16:57:43+05:30</updated>
   
 
   <id>http://akasralikar.github.io/articles/dont-repeat-yourself-dynamic-programming</id>
@@ -269,11 +531,7 @@ x. fib(2) = fib(1) + fib(0)
   
 
   
-    <category term="design" />
-  
-    <category term="programming" />
-  
-    <category term="dynamic" />
+    <category term="dynamic programming" />
   
 
   

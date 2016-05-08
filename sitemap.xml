@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://akasralikar.github.io/articles/modified-modified-hungarian-notation/</loc>
+<lastmod>2016-05-08T16:57:43+05:30</lastmod>
+</url>
+<url>
 <loc>http://akasralikar.github.io/articles/dont-repeat-yourself-dynamic-programming/</loc>
-<lastmod>2016-05-05T00:00:00+05:30</lastmod>
+<lastmod>2016-05-05T16:57:43+05:30</lastmod>
 </url>
 <url>
 <loc>http://akasralikar.github.io/about/</loc>
@@ -14,24 +18,15 @@
 <loc>http://akasralikar.github.io/contact/</loc>
 </url>
 <url>
-<loc>http://akasralikar.github.io/faqs/</loc>
-</url>
-<url>
 <loc>http://akasralikar.github.io/</loc>
 </url>
 <url>
 <loc>http://akasralikar.github.io/sitemap/</loc>
 </url>
 <url>
-<loc>http://akasralikar.github.io/support/</loc>
-</url>
-<url>
-<loc>http://akasralikar.github.io/tag/</loc>
-</url>
-<url>
 <loc>http://akasralikar.github.io/terms/</loc>
 </url>
 <url>
-<loc>http://akasralikar.github.io/work/</loc>
+<loc>http://akasralikar.github.io/topics/</loc>
 </url>
 </urlset>
