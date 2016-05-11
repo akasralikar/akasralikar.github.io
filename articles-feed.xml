@@ -6,7 +6,7 @@
   <generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator>
   <link href="http://akasralikar.github.io/articles-feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://akasralikar.github.io/" rel="alternate" type="text/html" />
-  <updated>2016-05-09T00:30:50+05:30</updated>
+  <updated>2016-05-12T05:01:05+05:30</updated>
   <id>http://akasralikar.github.io/</id>
 
   <title>Articles - Anirudha Kasralikar</title>
@@ -33,16 +33,165 @@
 
   
     <entry>
+  <title>Model View Controller Design Pattern</title>
+  <link href="http://akasralikar.github.io/articles/model-view-controller-design-pattern/" rel="alternate" type="text/html" title="Model View Controller Design Pattern" />
+  <published>2016-05-08T16:57:43+05:30</published>
+
+  
+    <updated>2016-05-11T06:57:43+05:30</updated>
+  
+
+  <id>http://akasralikar.github.io/articles/model-view-controller-design-pattern</id>
+  <content type="html" xml:base="http://akasralikar.github.io/articles/model-view-controller-design-pattern/">
+    
+
+&lt;p&gt;&lt;img src=&quot;http://akasralikar.github.io/images/mvc_role_diagram.png&quot; alt=&quot;Model View Controller Design Pattern&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Today I am going to discuss about one of common development design pattern named Model View Controller design pattern aka MVC architecture and how it works in the real world.&lt;/p&gt;
+
+&lt;nav class=&quot;js-toc toc&quot;&gt;
+  &lt;h4 class=&quot;toc__title&quot;&gt;Contents&lt;/h4&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction:&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#model&quot; id=&quot;markdown-toc-model&quot;&gt;Model&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#view&quot; id=&quot;markdown-toc-view&quot;&gt;View&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#controller&quot; id=&quot;markdown-toc-controller&quot;&gt;Controller&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#features&quot; id=&quot;markdown-toc-features&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#analogy&quot; id=&quot;markdown-toc-analogy&quot;&gt;Analogy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#limitations&quot; id=&quot;markdown-toc-limitations&quot;&gt;Limitations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot; id=&quot;markdown-toc-conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/nav&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction:&lt;/h2&gt;
+
+&lt;p&gt;MVC is a design pattern&lt;sup id=&quot;fnref:design_pattern&quot;&gt;&lt;a href=&quot;#fn:design_pattern&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Although MVC architecture is used by many of the most popular application frameworks like &lt;a href=&quot;http://symfony.com/&quot; title=&quot;Symfony&quot; target=&quot;_blank&quot;&gt;Symfony&lt;/a&gt;, &lt;a href=&quot;https://www.codeigniter.com/&quot; title=&quot;CodeIgniter&quot; target=&quot;_blank&quot;&gt;CodeIgniter&lt;/a&gt;, &lt;a href=&quot;https://laravel.com/&quot; title=&quot;Laravel&quot; target=&quot;_blank&quot;&gt;Laravel &lt;/a&gt;, etc, but it’s still a concept which can be confusing sometimes, particularly to new programmers.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;img src=&quot;http://akasralikar.github.io/images/frameworks.jpg&quot; alt=&quot;MVC Based Frameworks&quot; /&gt;
+	&lt;figcaption&gt;MVC Based Frameworks.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Let’s break MVC down into individual pieces, and go through each separately. This will also helps you in seeing the whole picture together and correlate different terms&lt;/p&gt;
+
+&lt;h3 id=&quot;model&quot;&gt;Model&lt;/h3&gt;
+
+&lt;p&gt;This is where application data resides. The model is responsible for managing the data of the application. The model should only be called by the controller and there should not be any interaction with the view. It responds to instructions from the controller.&lt;/p&gt;
+
+&lt;h3 id=&quot;view&quot;&gt;View&lt;/h3&gt;
+
+&lt;p&gt;The view should simply render the template and display any data passed to it by the controller.  A format of presentation of data is decided by controller. Usually views are script based templating systems like HTML, PHP, etc. There should not be any direct communication with models.&lt;/p&gt;
+
+&lt;h3 id=&quot;controller&quot;&gt;Controller&lt;/h3&gt;
+
+&lt;p&gt;All of standard frameworks have some kind of routing engine in place which forwards request to controller.   The controller is responsible for processing the incoming requests from the web browser. It receives the input, it validates that input. It communicate with model for data, and then pass that data on to the view for presentation.&lt;/p&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;p&gt;MVC is not just a firm set of guidelines, but also an overall architecture. You need to get familiar with it and play with different components.&lt;/p&gt;
+
+&lt;p&gt;Imagine if everyone in team built applications using their own choices and imaginations, then if new programmer starts working on a project, he would have no idea where to find features, how to extend the code or fix bugs. It would be nightmare for him to adopt to various types implementations. But With MVC design pattern a new programmer can very quickly identify workflow, where data files are resides and where to update the view pages.&lt;/p&gt;
+
+&lt;div class=&quot;notice--success&quot;&gt;
+  &lt;h4 id=&quot;key-pointers&quot;&gt;Key Pointers&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;MVC helps achieve two of most important design principle namely &lt;a href=&quot;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&quot; title=&quot;Don&#39;t Repeat Yourself&quot; target=&quot;_blank&quot;&gt;Don’t Repeat Yourself - DRY&lt;/a&gt;  and &lt;a href=&quot;http://en.wikipedia.org/wiki/Separation_of_concerns&quot; title=&quot;Separation of Concerns&quot; target=&quot;_blank&quot;&gt;Separation of Concerns&lt;/a&gt;. I suggest that you read introductions to those 2 topic.&lt;/li&gt;
+    &lt;li&gt;It allows you to logically organize different types of code so that it can also be understood by other programmers. So major benefit is easier code maintenance.&lt;/li&gt;
+    &lt;li&gt;Last but not the least the most important benefit of MVC architecture is Isolation of business logic from the UI ( user interface ).&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;analogy&quot;&gt;Analogy&lt;/h2&gt;
+
+&lt;p&gt;Few days back I came across cool analogy for understanding the Model View Controller design pattern.&lt;/p&gt;
+
+&lt;figure class=&quot;third&quot;&gt;
+  &lt;img src=&quot;http://akasralikar.github.io/images/th.jpg&quot; alt=&quot;Chef&quot; /&gt;
+  &lt;img src=&quot;http://akasralikar.github.io/images/Tisch-lineart.png&quot; alt=&quot;Table&quot; /&gt;
+  &lt;img src=&quot;http://akasralikar.github.io/images/waiter.gif&quot; alt=&quot;Waiter&quot; /&gt;
+  &lt;figcaption&gt;MVC as Restaurant&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class=&quot;notice&quot;&gt;
+  &lt;h4 id=&quot;mvc-as-restaurant&quot;&gt;MVC as Restaurant&lt;/h4&gt;
+  &lt;p&gt;Consider that whole MVC architecture is a restaurant. The chef is a the model whose role is to get orders from waiter and then prepare dishes in kitchen.  The waiter is the controller, who takes orders from the table’s / customer’s, then informs the chef about it, and finally brings the meal back to the table / customer.  The glorious table is the view, which simply holds the meal and take care of user interface.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There is another analogy you can refer &lt;a href=&quot;http://blog.codinghorror.com/understanding-model-view-controller/&quot; title=&quot;understanding-model-view-controller&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;, it considers MVC architecture  as Rendering of web page in browser. In this case Model is HTML, View is CSS and controller is browser.&lt;/p&gt;
+
+&lt;p&gt;Making analogies will not guarantee that you get complete understanding of MVC  design pattern, but it helps in correlating real world scenarios with these abstract terms.&lt;/p&gt;
+
+&lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
+
+&lt;p&gt;MVC is primarily a UI related design pattern, which means it cannot be used for command line tools, utility programs, etc. Also it is complex to implement especially for smaller applications and affect performance in such cases. 
+Because view and controller are closely coupled, modification to one affect the other. Also any changes to model will call for changes to controller and view.&lt;/p&gt;
+
+&lt;!---
+## Example 
+ 
+I presume you have hands on experience with [PHP]( http://php.net/ &quot;PHP&quot; ){:target=&quot;_blank&quot;} programming language and its echo system to understand examples given below.  
+--&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I hope that you now have a more clear idea of how the Model View Controller design pattern works and how you can implement it in your applications.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:design_pattern&quot;&gt;
+      &lt;p&gt;A Design pattern is a code structure that allows for common coding frameworks to be replicated quickly. &lt;a href=&quot;#fnref:design_pattern&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+    
+
+&lt;p&gt;&lt;a href=&quot;http://akasralikar.github.io/articles/model-view-controller-design-pattern/&quot; rel=&quot;nofollow&quot;&gt;Model View Controller Design Pattern&lt;/a&gt; was originally published by &lt;a href=&quot;http://akasralikar.github.io/about/&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt; on &lt;a href=&quot;http://akasralikar.github.io&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt;&lt;/p&gt;
+
+
+  </content>
+
+  
+  <author>
+    
+      <name>Anirudha Kasralikar</name>
+    
+    
+      <email>akasralikar@outlook.com</email>
+    
+    <uri>http://akasralikar.github.io/</uri>
+  </author>
+
+
+
+  
+    <category term="articles" />
+  
+
+  
+    <category term="design pattern" />
+  
+
+  
+    <summary type="text">In this article I am going to explain basic idea behind MVC design pattern. My attempt to explain Model View Controller Design Pattern.</summary>
+  
+</entry>
+
+  
+    <entry>
   <title>Modified Hungarian Notation</title>
-  <link href="http://akasralikar.github.io/articles/modified-modified-hungarian-notation/" rel="alternate" type="text/html" title="Modified Hungarian Notation" />
+  <link href="http://akasralikar.github.io/articles/modified-hungarian-notation/" rel="alternate" type="text/html" title="Modified Hungarian Notation" />
   <published>2016-05-08T16:57:43+05:30</published>
 
   
     <updated>2016-05-08T16:57:43+05:30</updated>
   
 
-  <id>http://akasralikar.github.io/articles/modified-modified-hungarian-notation</id>
-  <content type="html" xml:base="http://akasralikar.github.io/articles/modified-modified-hungarian-notation/">
+  <id>http://akasralikar.github.io/articles/modified-hungarian-notation</id>
+  <content type="html" xml:base="http://akasralikar.github.io/articles/modified-hungarian-notation/">
     
 
 &lt;p&gt;&lt;img src=&quot;http://akasralikar.github.io/images/het-belang-van-coding-standards.jpg&quot; alt=&quot;Modified Hungarian Notation&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -126,7 +275,7 @@ $resResourceVariable = fopen( &#39;/home/akasralikar/file.txt&#39;, &#39;r&#39; 
 // $obj for objects
 $objObjectVariable = new CClassName();
 
-// $bool for antonymous / lambda functions
+// $fn for antonymous / lambda functions
 $fnFunctionVariable = function( $name ) {
 	printf( &quot;Hello %s\r\n&quot;, $name );
 };&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -262,7 +411,7 @@ cannot guarantee good code, however; only the skill of the programmer can.
 
     
 
-&lt;p&gt;&lt;a href=&quot;http://akasralikar.github.io/articles/modified-modified-hungarian-notation/&quot; rel=&quot;nofollow&quot;&gt;Modified Hungarian Notation&lt;/a&gt; was originally published by &lt;a href=&quot;http://akasralikar.github.io/about/&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt; on &lt;a href=&quot;http://akasralikar.github.io&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://akasralikar.github.io/articles/modified-hungarian-notation/&quot; rel=&quot;nofollow&quot;&gt;Modified Hungarian Notation&lt;/a&gt; was originally published by &lt;a href=&quot;http://akasralikar.github.io/about/&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt; on &lt;a href=&quot;http://akasralikar.github.io&quot; rel=&quot;nofollow&quot;&gt;Anirudha Kasralikar&lt;/a&gt;&lt;/p&gt;
 
 
   </content>
@@ -535,7 +684,7 @@ x. fib(2) = fib(1) + fib(0)
   
 
   
-    <summary type="text">My impressions of the concept dynamic programming using small examples.</summary>
+    <summary type="text">Dynamic programming is a very powerful technique to solve a particular class of problems. This article is an attempt to explain concept dynamic programming using small examples.</summary>
   
 </entry>
 

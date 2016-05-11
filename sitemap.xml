@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://akasralikar.github.io/articles/modified-modified-hungarian-notation/</loc>
+<loc>http://akasralikar.github.io/articles/model-view-controller-design-pattern/</loc>
+<lastmod>2016-05-08T16:57:43+05:30</lastmod>
+</url>
+<url>
+<loc>http://akasralikar.github.io/articles/modified-hungarian-notation/</loc>
 <lastmod>2016-05-08T16:57:43+05:30</lastmod>
 </url>
 <url>
@@ -28,5 +32,9 @@
 </url>
 <url>
 <loc>http://akasralikar.github.io/topics/</loc>
+</url>
+<url>
+<loc>http://akasralikar.github.io/google2d487e376f4e097e.html</loc>
+<lastmod>2016-05-09T16:43:41+05:30</lastmod>
 </url>
 </urlset>
