@@ -6,7 +6,7 @@
   <generator uri="http://jekyllrb.com" version="3.1.3">Jekyll</generator>
   <link href="http://akasralikar.github.io/articles-feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://akasralikar.github.io/" rel="alternate" type="text/html" />
-  <updated>2016-05-12T05:26:18+05:30</updated>
+  <updated>2016-05-13T23:19:15+05:30</updated>
   <id>http://akasralikar.github.io/</id>
 
   <title>Articles - Anirudha Kasralikar</title>
@@ -53,7 +53,7 @@
 &lt;nav class=&quot;js-toc toc&quot;&gt;
   &lt;h4 class=&quot;toc__title&quot;&gt;Contents&lt;/h4&gt;
 &lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction:&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#model&quot; id=&quot;markdown-toc-model&quot;&gt;Model&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#view&quot; id=&quot;markdown-toc-view&quot;&gt;View&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#controller&quot; id=&quot;markdown-toc-controller&quot;&gt;Controller&lt;/a&gt;&lt;/li&gt;
@@ -67,8 +67,7 @@
 
 &lt;/nav&gt;
 
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction:&lt;/h2&gt;
-
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;MVC is a design pattern&lt;sup id=&quot;fnref:design_pattern&quot;&gt;&lt;a href=&quot;#fn:design_pattern&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Although MVC architecture is used by many of the most popular application frameworks like &lt;a href=&quot;http://symfony.com/&quot; title=&quot;Symfony&quot; target=&quot;_blank&quot;&gt;Symfony&lt;/a&gt;, &lt;a href=&quot;https://www.codeigniter.com/&quot; title=&quot;CodeIgniter&quot; target=&quot;_blank&quot;&gt;CodeIgniter&lt;/a&gt;, &lt;a href=&quot;https://laravel.com/&quot; title=&quot;Laravel&quot; target=&quot;_blank&quot;&gt;Laravel &lt;/a&gt;, etc, but it’s still a concept which can be confusing sometimes, particularly to new programmers.&lt;/p&gt;
 
 &lt;figure&gt;
@@ -91,7 +90,6 @@
 &lt;p&gt;All of standard frameworks have some kind of routing engine in place which forwards request to controller.   The controller is responsible for processing the incoming requests from the web browser. It receives the input, it validates that input. It communicate with model for data, and then pass that data on to the view for presentation.&lt;/p&gt;
 
 &lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-
 &lt;p&gt;MVC is not just a firm set of guidelines, but also an overall architecture. You need to get familiar with it and play with different components.&lt;/p&gt;
 
 &lt;p&gt;Imagine if everyone in team built applications using their own choices and imaginations, then if new programmer starts working on a project, he would have no idea where to find features, how to extend the code or fix bugs. It would be nightmare for him to adopt to various types implementations. But With MVC design pattern a new programmer can very quickly identify workflow, where data files are resides and where to update the view pages.&lt;/p&gt;
@@ -106,7 +104,6 @@
 &lt;/div&gt;
 
 &lt;h2 id=&quot;analogy&quot;&gt;Analogy&lt;/h2&gt;
-
 &lt;p&gt;Few days back I came across cool analogy for understanding the Model View Controller design pattern.&lt;/p&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
@@ -126,13 +123,11 @@
 &lt;p&gt;Making analogies will not guarantee that you get complete understanding of MVC  design pattern, but it helps in correlating real world scenarios with these abstract terms.&lt;/p&gt;
 
 &lt;h2 id=&quot;limitations&quot;&gt;Limitations&lt;/h2&gt;
-
 &lt;p&gt;MVC is primarily a UI related design pattern, which means it cannot be used for command line tools, utility programs, etc. Also it is complex to implement especially for smaller applications and affect performance in such cases. 
 Because view and controller are closely coupled, modification to one affect the other. Also any changes to model will call for changes to controller and view.&lt;/p&gt;
 
 &lt;!---
-## Example 
- 
+## Example
 I presume you have hands on experience with [PHP]( http://php.net/ &quot;PHP&quot; ){:target=&quot;_blank&quot;} programming language and its echo system to understand examples given below.  
 --&gt;
 
@@ -220,7 +215,7 @@ I presume you have hands on experience with [PHP]( http://php.net/ &quot;PHP&quo
 
 &lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
 &lt;p&gt;I presume that you have basic hands-on with &lt;a href=&quot;http://php.net/&quot; title=&quot;PHP&quot;&gt;PHP&lt;/a&gt; programming. Also you understood how community based standard recommendation for any programming language prosper.
-You can go through &lt;a href=&quot;http://wwference.w.php-fig.org/psr/&quot; title=&quot;PHP Standard Recommendation&quot;&gt;PHP Standard Recommendation&lt;/a&gt; as reference.&lt;/p&gt;
+You can go through &lt;a href=&quot;http://php-fig.org/psr/&quot; title=&quot;PHP Standard Recommendation&quot;&gt;PHP Standard Recommendation&lt;/a&gt; as reference.&lt;/p&gt;
 
 &lt;p&gt;As per Wikipedia, definition of Hungarian notation is as below.&lt;/p&gt;
 
